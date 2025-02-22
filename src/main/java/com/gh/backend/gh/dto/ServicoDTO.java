@@ -12,12 +12,14 @@ public class ServicoDTO {
     private double deslocamentoKm;
     private double custoPorKm;
     private double totalCustoDeslocamento;
+    private String descricao;
 
     // Construtor
-    public ServicoDTO(String id, String nomeCliente, TipoServico tipoServico, double valorHora, int horasMensais, double valorMensal, double deslocamentoKm, double custoPorKm, double totalCustoDeslocamento) {
+    public ServicoDTO(String id, String nomeCliente, TipoServico tipoServico, String descricao, double valorHora, int horasMensais, double valorMensal, double deslocamentoKm, double custoPorKm, double totalCustoDeslocamento) {
         this.id = id;
         this.nomeCliente = nomeCliente;
         this.tipoServico = String.valueOf(tipoServico);
+        this.descricao = descricao;
         this.valorHora = valorHora;
         this.horasMensais = horasMensais;
         this.valorMensal = valorMensal;
@@ -36,6 +38,8 @@ public class ServicoDTO {
     public String getTipoServico() { return tipoServico; }
     public void setTipoServico(String tipoServico) { this.tipoServico = tipoServico; }
 
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
     public double getValorHora() { return valorHora; }
     public void setValorHora(double valorHora) { this.valorHora = valorHora; }
 

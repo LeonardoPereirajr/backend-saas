@@ -76,6 +76,7 @@ public class ServicoService {
 
         return new ServicoDTO(
                 servico.getId(), nomeCliente, servico.getTipoServico(),
+                (servico.getDescricao() != null) ? servico.getDescricao() : "",
                 (servico.getValorHora() != null) ? servico.getValorHora() : 0.0,
                 (servico.getHorasMensais() != null) ? servico.getHorasMensais() : 0,
                 (servico.getValorMensal() != null) ? servico.getValorMensal() : 0.0,
