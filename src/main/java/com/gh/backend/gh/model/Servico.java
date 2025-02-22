@@ -14,6 +14,7 @@ public class Servico {
     private String clienteId;
     private String nomeCliente;
     private TipoServico tipoServico;
+    private String descricao;
 
     // Para assessoria
     private Double valorHora;
@@ -103,5 +104,13 @@ public class Servico {
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
