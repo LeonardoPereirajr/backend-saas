@@ -13,9 +13,14 @@ public class ServicoDTO {
     private double custoPorKm;
     private double totalCustoDeslocamento;
     private String descricao;
+    private double horasServico;
+    private double valorTotal;
 
     // Construtor
-    public ServicoDTO(String id, String nomeCliente, TipoServico tipoServico, String descricao, double valorHora, int horasMensais, double valorMensal, double deslocamentoKm, double custoPorKm, double totalCustoDeslocamento) {
+    public ServicoDTO(String id, String nomeCliente, TipoServico tipoServico, String descricao,
+                      double valorHora, int horasMensais, double valorMensal, double deslocamentoKm,
+                      double custoPorKm, double totalCustoDeslocamento, double horasServico,
+                      double valorTotal) {
         this.id = id;
         this.nomeCliente = nomeCliente;
         this.tipoServico = String.valueOf(tipoServico);
@@ -26,11 +31,29 @@ public class ServicoDTO {
         this.deslocamentoKm = deslocamentoKm;
         this.custoPorKm = custoPorKm;
         this.totalCustoDeslocamento = totalCustoDeslocamento;
+        this.horasServico = horasServico;
+        this.valorTotal = valorTotal;
     }
 
     // Getters e Setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
+
+    public double getHorasServico() {
+        return horasServico;
+    }
+
+    public void setHorasServico(double horasServico) {
+        this.horasServico = horasServico;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
 
     public String getNomeCliente() { return nomeCliente; }
     public void setNomeCliente(String nomeCliente) { this.nomeCliente = nomeCliente; }

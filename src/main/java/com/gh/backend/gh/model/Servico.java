@@ -25,6 +25,10 @@ public class Servico {
     private Double deslocamentoKm;
     private Double custoPorKm;
     private Double totalCustoDeslocamento;
+    // Novos campos para Storymaker
+    private Double horasServico;
+    private Double valorTotal;
+
 
     public String getId() {
         return id;
@@ -112,5 +116,25 @@ public class Servico {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public void setValorHora(Double valorHora) {
+        this.valorHora = valorHora;
+    }
+
+    public Double getHorasServico() {
+        return horasServico;
+    }
+
+    public void setHorasServico(Double horasServico) {
+        this.horasServico = horasServico;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 }
