@@ -38,5 +38,9 @@ public class ClienteController {
             return ResponseEntity.notFound().build();
         }
     }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable String id) {
+        clienteService.deletar(id);
+    }
 }
 

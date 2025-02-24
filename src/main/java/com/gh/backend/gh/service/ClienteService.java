@@ -20,7 +20,10 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    // ✅ Agora recebe um `String id`, não `Long id`
+    public void deletar(String id) {
+        clienteRepository.deleteById(id);
+    }
+
     public Cliente atualizar(String id, Cliente clienteAtualizado) {
         return clienteRepository.findById(id)
                 .map(cliente -> {
