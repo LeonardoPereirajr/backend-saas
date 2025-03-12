@@ -2,6 +2,13 @@
 
 ##Backend-SaaS (Java) – Endpoints e suas funções:
 
+Próximas Entregas
+
+- Envio de Proposta / Orçamento aos clientes por integração Whatsapp e gmail.
+- Criação de kanban de agendamento de tarefas.
+- Envio de notificações de status de tarefas.
+- Pensar em Modulo para o clientes interagirem com o profissional.
+
 #Clientes:
 
 - GET /clientes: Retorna todos os clientes cadastrados.
