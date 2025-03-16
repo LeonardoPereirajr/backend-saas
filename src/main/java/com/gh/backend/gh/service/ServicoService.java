@@ -22,12 +22,15 @@ public class ServicoService {
 
     public List<ServicoDTO> listarTodos() {
         List<Servico> servicos = servicoRepository.findAll();
-        return servicos.stream().map(this::mapearParaDTO).collect(Collectors.toList());
+        List<ServicoDTO> dtos = servicos.stream().map(this::mapearParaDTO).collect(Collectors.toList());
+        return dtos;
     }
+
 
     public Servico salvar(Servico servico) {
         return servicoRepository.save(servico);
     }
+
 
     public Servico buscarPorId(String id) {
         return servicoRepository.findById(id).orElse(null);
@@ -37,7 +40,6 @@ public class ServicoService {
         servicoRepository.deleteById(id);
     }
 
-    // Se quiser atualizar um serviço existente:
     public Servico atualizar(String id, Servico servicoAtualizado) {
         Servico servicoEncontrado = buscarPorId(id);
         if (servicoEncontrado == null) {
@@ -53,29 +55,26 @@ public class ServicoService {
         servicoEncontrado.setTotalCustoDeslocamento(servicoAtualizado.getTotalCustoDeslocamento());
         servicoEncontrado.setHorasServico(servicoAtualizado.getHorasServico());
         servicoEncontrado.setValorTotal(servicoAtualizado.getValorTotal());
+
         return servicoRepository.save(servicoEncontrado);
     }
+
+
     private ServicoDTO mapearParaDTO(Servico servico) {
-
         String nomeCliente = "Desconhecido";
-
-        if (servico.getClienteId() != null) {
-            Cliente cliente = clienteRepository.findById(servico.getClienteId()).orElse(null);
-            if (cliente != null) {
-                nomeCliente = cliente.getNome();
-            }
+        String clienteId = servico.getClienteId(); // 🔹 Mantemos o clienteId original
+        if (clienteId != null && !clienteId.isEmpty()) {
+            Cliente cliente = clienteRepository.findById(clienteId).orElse(null);
+            assert cliente != null;
+            clienteId = cliente.getId();
+            nomeCliente = cliente.getNome();
         }
-        double deslocamentoKm = (servico.getDeslocamentoKm() != null) ? servico.getDeslocamentoKm() : 0.0;
-        double custoPorKm = (servico.getCustoPorKm() != null) ? servico.getCustoPorKm() : 0.0;
-        double totalCustoDeslocamento = (servico.getTotalCustoDeslocamento() != null) ? servico.getTotalCustoDeslocamento() : 0.0;
-        double valorHora = (servico.getValorHora() != 0.0) ? servico.getValorHora() : 0.0;
-        int horasMensais = (servico.getHorasMensais() != null) ? servico.getHorasMensais() : 0;
-        double valorMensal = (servico.getValorMensal() != null) ? servico.getValorMensal() : 0.0;
-        double horasServico = (servico.getHorasServico() != null) ? servico.getHorasServico() : 0.0;
-        double valorTotal = (servico.getValorTotal() != null) ? servico.getValorTotal() : 0.0;
 
         return new ServicoDTO(
-                servico.getId(), nomeCliente, servico.getTipoServico(),
+                servico.getId(),
+                nomeCliente,
+                clienteId,
+                servico.getTipoServico(),
                 (servico.getDescricao() != null) ? servico.getDescricao() : "",
                 (servico.getValorHora() != null) ? servico.getValorHora() : 0.0,
                 (servico.getHorasMensais() != null) ? servico.getHorasMensais() : 0,
@@ -87,5 +86,4 @@ public class ServicoService {
                 (servico.getValorTotal() != null) ? servico.getValorTotal() : 0.0
         );
     }
-
 }

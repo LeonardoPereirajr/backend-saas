@@ -1,9 +1,14 @@
 package com.gh.backend.gh.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gh.backend.gh.model.TipoServico;
 
 public class ServicoDTO {
     private String id;
+
+    @JsonProperty("clienteId")
+    private String clienteId;
+
     private String nomeCliente;
     private String tipoServico;
     private double valorHora;
@@ -16,13 +21,13 @@ public class ServicoDTO {
     private double horasServico;
     private double valorTotal;
 
-    // Construtor
-    public ServicoDTO(String id, String nomeCliente, TipoServico tipoServico, String descricao,
+    public ServicoDTO(String id, String nomeCliente, String clienteId, TipoServico tipoServico, String descricao,
                       double valorHora, int horasMensais, double valorMensal, double deslocamentoKm,
                       double custoPorKm, double totalCustoDeslocamento, double horasServico,
                       double valorTotal) {
         this.id = id;
         this.nomeCliente = nomeCliente;
+        this.clienteId = clienteId;
         this.tipoServico = String.valueOf(tipoServico);
         this.descricao = descricao;
         this.valorHora = valorHora;
@@ -35,9 +40,16 @@ public class ServicoDTO {
         this.valorTotal = valorTotal;
     }
 
-    // Getters e Setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
+
+    public String getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(String clienteId) {
+        this.clienteId = clienteId;
+    }
 
     public double getHorasServico() {
         return horasServico;

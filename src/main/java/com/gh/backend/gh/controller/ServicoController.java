@@ -21,14 +21,12 @@ public class ServicoController {
     @Autowired
     private ServicoService servicoService;
 
-    // GET /servicos
     @GetMapping
     public ResponseEntity<List<ServicoDTO>> listarTodos() {
         List<ServicoDTO> servicos = servicoService.listarTodos();
         return ResponseEntity.ok(servicos);
     }
 
-    // GET /servicos/{id}
     @GetMapping("/{id}")
     public Servico buscarPorId(@PathVariable String id) {
         return servicoService.buscarPorId(id);
@@ -45,13 +43,11 @@ public class ServicoController {
     }
 
 
-    // PUT /servicos/{id}
     @PutMapping("/{id}")
     public Servico atualizar(@PathVariable String id, @RequestBody Servico servico) {
         return servicoService.atualizar(id, servico);
     }
 
-    // DELETE /servicos/{id}
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable String id) {
         servicoService.deletar(id);

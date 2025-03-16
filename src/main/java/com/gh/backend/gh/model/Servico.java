@@ -1,8 +1,6 @@
 package com.gh.backend.gh.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -25,7 +23,6 @@ public class Servico {
     private Double deslocamentoKm;
     private Double custoPorKm;
     private Double totalCustoDeslocamento;
-    // Novos campos para Storymaker
     private Double horasServico;
     private Double valorTotal;
 

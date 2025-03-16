@@ -23,7 +23,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    // GETTERS e SETTERS (SEM Lombok)
+
     public String getId() {
         return id;
     }
