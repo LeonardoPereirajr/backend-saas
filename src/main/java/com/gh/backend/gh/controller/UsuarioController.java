@@ -18,13 +18,11 @@ public class UsuarioController {
 
     public UsuarioController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
-        System.out.println("🚀 UsuarioController inicializado!");
     }
 
     @GetMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<Usuario>> listarUsuarios() {
-        System.out.println("🔍 Acessando listarUsuarios()");
         List<Usuario> usuarios = usuarioRepository.findAll();
         return ResponseEntity.ok(usuarios);
     }
