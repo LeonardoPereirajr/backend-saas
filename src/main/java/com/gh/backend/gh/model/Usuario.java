@@ -17,10 +17,8 @@ public class Usuario {
     private String senha;
     private Set<String> roles = new HashSet<>();
 
-    // Construtor vazio para o Spring
     public Usuario() {}
 
-    // Construtor para inicialização rápida
     public Usuario(String nome, String email, String senha, Set<String> roles) {
         this.nome = nome;
         this.email = email;
@@ -28,7 +26,6 @@ public class Usuario {
         this.roles = roles;
     }
 
-    // Getters e Setters
     public String getId() {
         return id;
     }

@@ -62,7 +62,7 @@ public class ServicoService {
 
     private ServicoDTO mapearParaDTO(Servico servico) {
         String nomeCliente = "Desconhecido";
-        String clienteId = servico.getClienteId(); // 🔹 Mantemos o clienteId original
+        String clienteId = servico.getClienteId();
         if (clienteId != null && !clienteId.isEmpty()) {
             Cliente cliente = clienteRepository.findById(clienteId).orElse(null);
             assert cliente != null;

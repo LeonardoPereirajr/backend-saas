@@ -17,9 +17,8 @@ public class Cliente {
     private String dataCadastro;
     private TipoServico tipoServico;
 
-    private Contato contato; // Apenas para PJ
+    private Contato contato;
 
-    // Construtor vazio
     public Cliente() {
     }
 
