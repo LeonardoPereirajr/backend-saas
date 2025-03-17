@@ -4,7 +4,7 @@ Este projeto é o **backend** do sistema **Gestão de Clientes**, desenvolvido p
 
 ## **🛠 Tecnologias Utilizadas**
 
-- **Java 17** *(ou superior)*
+- **Java 21*
 - **Spring Boot 3.x**
 - **MongoDB** *(Banco de dados NoSQL)*
 - **Spring Security** *(Autenticação e autorização)*
@@ -46,7 +46,7 @@ Este projeto é o **backend** do sistema **Gestão de Clientes**, desenvolvido p
 1️⃣ **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-repositorio/backend-saas.git
+git clone https://github.com/LeonardoPereirajr/backend-saas.git
 ```
 
 2️⃣ **Configure o MongoDB**Certifique-se de que o serviço do **MongoDB** está em execução na porta padrão `27017`. 
@@ -79,11 +79,18 @@ A API estará disponível em: [http://localhost:8080](http://localhost:8080)
 
 ### **ClienteController**
 
-📌 `GET /clientes` → Listar todos os clientes📌 `GET /clientes/{id}` → Buscar cliente por ID📌 `POST /clientes` → Criar um novo cliente📌 `PUT /clientes/{id}` → Atualizar cliente📌 `DELETE /clientes/{id}` → Remover cliente
+📌 `GET /clientes` → Listar todos os clientes
+📌 `GET /clientes/{id}` → Buscar cliente por ID
+📌 `POST /clientes` → Criar um novo cliente
+📌 `PUT /clientes/{id}` → Atualizar cliente
+📌 `DELETE /clientes/{id}` → Remover cliente
 
 ### **ServicoController**
 
-📌 `GET /servicos` → Listar todos os serviços📌 `POST /servicos` → Criar um novo serviço📌 `PUT /servicos/{id}` → Atualizar serviço📌 `DELETE /servicos/{id}` → Remover serviço
+📌 `GET /servicos` → Listar todos os serviços
+📌 `POST /servicos` → Criar um novo serviço
+📌 `PUT /servicos/{id}` → Atualizar serviço
+📌 `DELETE /servicos/{id}` → Remover serviço
 
 Para acessar a documentação da API via **Swagger UI**, vá para:  
 📌 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
