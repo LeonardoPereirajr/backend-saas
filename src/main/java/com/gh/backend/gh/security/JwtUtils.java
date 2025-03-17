@@ -9,7 +9,7 @@ import java.util.Date;
 @Service
 public class JwtUtils {
 
-    private final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256); // Gerando uma chave segura automaticamente
+    private final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final int EXPIRATION_TIME = 86400000;
     public String generateToken(String username) {
         return Jwts.builder()
