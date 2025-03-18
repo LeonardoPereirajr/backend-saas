@@ -6,10 +6,8 @@ public class Contato {
     private String email;
     private String telefone;
 
-    // Construtor vazio
     public Contato() {}
 
-    // GETTERS e SETTERS
     public String getNome() {
         return nome;
     }

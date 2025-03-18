@@ -5,7 +5,6 @@ import com.gh.backend.gh.service.ServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import com.gh.backend.gh.model.Servico;
 
@@ -23,7 +22,7 @@ public class ServicoController {
     private ServicoService servicoService;
 
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @
     public ResponseEntity<List<ServicoDTO>> listarTodos() {
         List<ServicoDTO> servicos = servicoService.listarTodos();
         return ResponseEntity.ok(servicos);
